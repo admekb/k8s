@@ -1,5 +1,8 @@
 # k8s
-kubectl get pods - посмотреть список подов
+* Посмотреть список подов
+```console
+kubectl get pods
+```
 kubectl get pods -o wide - посмотреть список подов с расширенной информацией
 kubectl discribe pod nginx - посмотреть список подов
 kubectl create -f nginx.yaml - создать объект из manifes файла
