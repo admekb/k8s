@@ -3,19 +3,76 @@
 ```console
 kubectl get pods
 ```
-kubectl get pods -o wide - посмотреть список подов с расширенной информацией
-kubectl discribe pod nginx - посмотреть список подов
-kubectl create -f nginx.yaml - создать объект из manifes файла
-kubectl run nginx --image=nginx - создать под
-kubectl run nginx --image=nginx --dry-run=client -o yaml > nginx.yaml - создать yaml manifest
-kubectl delete pod nginx - удалить pod
+* Посмотреть список подов с расширенной информацией
+```console
+kubectl get pods -o wide
+```
+* Расширенная информация о поде
+```console
+kubectl discribe pod nginx
+```
+* Создать объект из manifest файла
+```console
+kubectl create -f nginx.yaml
+```
+* Создать под
+```console
+kubectl run nginx --image=nginx
+```
+* Создать yaml manifest
+```console
+kubectl run nginx --image=nginx --dry-run=client -o yaml > nginx.yaml
+```
+* Удалить pod
+```console
+kubectl delete pod nginx
+```
+* Пересоздать replicaset
+```console
 kubectl replace -f replica.yml
-kubectl scale --replicas=6 -f replica.yml
-kubectl scale --replicas=6 replicaset myapp-replicaset
-kubectl get replicaset
-kubectl delete replicaset myapp-replicaset
-kubectl get replicaset new-replica-set -o yaml >> replica.yaml
+```
+* Пересоздать replicaset с переозданием сущестующих подов
+```console
 kubectl replace -f replica.yaml --force
+```
+* Маштабировать replicaset через manifest
+```console
+kubectl scale --replicas=6 -f replica.yml
+```
+* Маштабировать replicaset через manifest через name
+```console
+kubectl scale --replicas=6 replicaset myapp-replicaset
+```
+* Отобразить replicaset
+```console
+kubectl get replicaset
+```
+* Удалить replicaset
+```console
+kubectl delete replicaset myapp-replicaset
+```
+* Создать manifest файл из существующей replicaset
+```console
+kubectl get replicaset new-replica-set -o yaml >> replica.yaml
+```
+* Посмотреть версию api
+```console
+kubectl explain replicaset
+```
+* Отредактировать replicaset
+```console
+kubectl edit replicaset new-replicaset
+```
+* Отобразить все объекты
+```console
+kubectl get all
+```
+
+
+
+
+
+
 kubectl explain replicaset - посмотреть версию api
 kubectl edit replicaset new-replicaset
 kubectl get all
