@@ -1,6 +1,7 @@
 python3 -m venv kubespray-venv
 source kubespray-venv/bin/activate
 pip3 install -U -r requirements.txt
+kubectl get componentstatuses
 # k8s
 * Посмотреть список подов
 ```console
