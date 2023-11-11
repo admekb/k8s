@@ -2,6 +2,7 @@ python3 -m venv kubespray-venv
 source kubespray-venv/bin/activate
 pip3 install -U -r requirements.txt
 kubectl get componentstatuses
+kubectl label node node2 node-role.kubernetes.io/worker=
 # k8s
 * Посмотреть список подов
 ```console
