@@ -5,7 +5,7 @@ pip3 install -U -r requirements.txt
 kubectl get componentstatuses
 kubectl label node node2 node-role.kubernetes.io/worker=
 # k8s
-* Обращение к сервису db-service в dev namespace обращение к service svc.cluster.local
+* Обращение к сервису db-service в dev namespace к service svc.cluster.local
 ```console
 db-service.dev.svc.cluster.local
 ```
