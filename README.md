@@ -1,3 +1,6 @@
+
+kubectl replace --force -f nginx.yaml
+kubectl get pods --watch
 kubectl get secret postgres-secret-config -o jsonpath="{.data.password}" | base64 --decode
 echo "postgres" | base64
 python3 -m venv kubespray-venv
