@@ -1,4 +1,4 @@
-kubectl get pods --selector env=dev --no=headers | wc -l
+kubectl get pods --selector env=dev,bu=finance --no=headers | wc -l
 kubectl replace --force -f nginx.yaml
 kubectl get pods --watch
 kubectl get secret postgres-secret-config -o jsonpath="{.data.password}" | base64 --decode
