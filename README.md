@@ -1,3 +1,4 @@
+kubectl taint nodes node01 spray=mortein:NoSchedule
 kubectl taint nodes node-name key=value:taint-effect
 kubectl get pods --selector env=dev,bu=finance --no=headers | wc -l
 kubectl replace --force -f nginx.yaml
