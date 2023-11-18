@@ -1,3 +1,8 @@
+* Чтобы убрать taint у ноды можно запустить коману с сущестующими параметрами tain добавив "-"
+```console
+kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+```
+kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
 kubectl taint nodes node01 spray=mortein:NoSchedule
 kubectl taint nodes node-name key=value:taint-effect
 kubectl get pods --selector env=dev,bu=finance --no=headers | wc -l
