@@ -1,3 +1,5 @@
+kubectl label node node01 color=blue
+
 * Чтобы убрать taint у ноды можно запустить коману с сущестующими параметрами tain добавив "-"
 ```console
 kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
