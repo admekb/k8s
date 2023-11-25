@@ -1,3 +1,4 @@
+kubectl create configmap my-scheduler-config --from-file=my-she-con.yaml -n kube-system
 kubectl logs my-custom-sheduller --name-space=kube-system
 kubectl get events -A -o wide
 kubectl label node node01 color=blue
