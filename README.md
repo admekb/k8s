@@ -1,3 +1,5 @@
+kubectl logs my-custom-sheduller --name-space=kube-system
+kubectl get events -A -o wide
 kubectl label node node01 color=blue
 
 * Чтобы убрать taint у ноды можно запустить коману с сущестующими параметрами tain добавив "-"
