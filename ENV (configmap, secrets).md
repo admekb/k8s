@@ -2,7 +2,17 @@
 ```console
 kubectl create configmap  webapp-config-map --from-literal=APP_COLOR=darkblue --from-literal=APP_OTHER=disregard
 ```
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: special-config
+  namespace: default
+data:
+  SPECIAL_LEVEL: very
+  SPECIAL_TYPE: charm
 Пример manifest file для создания pod с указанием configmap
+```
 ```yaml
 ---
 apiVersion: v1
