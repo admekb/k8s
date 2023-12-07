@@ -11,8 +11,8 @@ metadata:
 data:
   SPECIAL_LEVEL: very
   SPECIAL_TYPE: charm
-Пример manifest file для создания pod с указанием configmap
 ```
+Пример manifest file для создания pod с указанием configmap
 ```yaml
 ---
 apiVersion: v1
