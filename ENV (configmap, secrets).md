@@ -79,3 +79,11 @@ spec:
     - secretRef:
         name: db-secret
 ```
+Официальная документация
+```url
+https://kubernetes.io/docs/concepts/configuration/secret/
+```
+Включение шифрования
+```url
+https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+```
