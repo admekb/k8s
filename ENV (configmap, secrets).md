@@ -78,4 +78,4 @@ spec:
     envFrom:
     - secretRef:
         name: db-secret
-```yaml
+```
