@@ -52,6 +52,14 @@ spec:
 ```console
 kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
 ```
+Кодирование secret
+```console
+echo "password"|base64
+```
+Раскодирование secret
+```console
+echo "cGFzc3dvcmQK"|base64 --decode
+```
 Пример использования secret
 ```yaml
 ---
