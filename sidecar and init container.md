@@ -1,4 +1,4 @@
-'''yaml
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,4 +17,4 @@ spec:
   - name: init-mydb
     image: busybox:1.28
     command: ['sh', '-c', 'until nslookup mydb; do echo waiting for mydb; sleep 2; done;']
-'''    
+```
