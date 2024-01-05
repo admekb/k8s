@@ -26,6 +26,10 @@ apt update
 ```yaml
 apt-get install kubeadm=1.27.0-00
 ```
+Обновить конфигурацию kubadm
+```yaml
+kubeadm upgrade node
+```
 Обновить kubelet
 ```yaml
 apt-get install kubelet=1.27.0-00 
