@@ -10,3 +10,24 @@ kubectl cordon node01
 ```yaml
 kubectl uncordon node01
 ```
+Посмотреть план upgrade
+```yaml
+kubeadm upgrade plan
+```
+Обновить зависимости
+```yaml
+apt update
+```
+Обновить kubadm
+```yaml
+apt-get install kubeadm=1.27.0-00
+```
+Обновить kubelet
+```yaml
+apt-get install kubelet=1.27.0-00 
+```
+Перезапустить kubelet
+```yaml
+systemctl daemon-reload
+systemctl restart kubelet
+```
