@@ -6,6 +6,10 @@ kubectl drain node01 --ignore-daemonsets
 ```yaml
 kubectl cordon node01
 ```
+Разрешить размещаться новым подам обратно
+```yaml
+kubectl uncordon node01
+```
 Вернуть ноду для возможности Schedulable
 ```yaml
 kubectl uncordon node01
