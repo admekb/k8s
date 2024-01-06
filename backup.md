@@ -25,13 +25,8 @@ ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 \
 snapshot save /opt/snapshot-pre-boot.db
 ```
 Восстановить etcd из snapshot
-```yaml
-ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 \
---cacert=/etc/kubernetes/pki/etcd/ca.crt \
---cert=/etc/kubernetes/pki/etcd/server.crt \
---key=/etc/kubernetes/pki/etcd/server.key \
---data-dir /var/lib/etcd-from-backup \
-snapshot restore /opt/snapshot-pre-boot.db
+```console
+ETCDCTL_API=3 etcdctl snapshot restore --data-dir /var/lib/etcd-from-backup /opt/snapshot-pre-boot.db
 ```
 Next, update the /etc/kubernetes/manifests/etcd.yaml:
 
