@@ -1,3 +1,7 @@
+Сделать бекап через yaml
+```console
+kubectl get all --all-namespaces -o yaml > all-deploy-services.yaml
+```
 Количество node etcd
 ```console
 ETCDCTL_API=3 etcdctl \
