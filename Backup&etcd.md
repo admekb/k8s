@@ -47,6 +47,15 @@ ETCDCTL_API=3 etcdctl snapshot restore --data-dir /var/lib/etcd-from-backup /opt
 ```console
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/pki/ca.pem --cert=/etc/etcd/pki/etcd.pem --key=/etc/etcd/pki/etcd-key.pem snapshot restore /root/cluster2.db --data-dir /var/lib/etcd-data-new
 ```
+Не забываем накинуть прав потом
+```console
+chown -R etcd:etcd /var/lib/etcd-data-new
+```
+Если как служба запущен etcd 
+```console
+vi /etc/systemd/system/etcd.service
+```
+Если через как static pod
 Next, update the /etc/kubernetes/manifests/etcd.yaml:
 
 We have now restored the etcd snapshot to a new path on the controlplane - /var/lib/etcd-from-backup, so, the only change to be made in the YAML file, is to change the hostPath for the volume called etcd-data from old directory (/var/lib/etcd) to the new directory (/var/lib/etcd-from-backup).
