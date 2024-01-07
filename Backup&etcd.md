@@ -7,6 +7,10 @@ ETCDCTL_API=3 etcdctl \
  --key=/etc/etcd/pki/etcd-key.pem \
   member list
 ```
+Узнать endpoint для etcd
+```console
+kubectl describe  pods -n kube-system etcd-cluster1-controlplane  | grep advertise-client-urls
+```
 Экпорт переменной etcd
 ```console
 export ETCDCTL_API=3
