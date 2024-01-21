@@ -10,8 +10,16 @@ kubectl config get-clusters
 ```console
 kubectl config use-context cluster1
 ```
+Переключить kubeconfig на использование research с указанием пути до kubeconfig
+```console
+kubectl config --kubeconfig=/root/my-kube-config use-context research
+```
+Посмотреть текущий context
+```console
+kubectl config --kubeconfig=/root/my-kube-config current-context
+```
 Пример kubeconfig на один кластер
-```uanl
+```yaml
 apiVersion: v1
 clusters:
 - cluster:
@@ -31,4 +39,68 @@ users:
   user:
     client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJVENDQWdtZ0F3SUJBZ0lJVXYzaDUwZlFvU0V3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBeE1qRXhNREkwTXpGYUZ3MHlOVEF4TWpBeE1ESTBNelJhTURReApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1Sa3dGd1lEVlFRREV4QnJkV0psY201bGRHVnpMV0ZrCmJXbHVNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXo0SXFmMHJucm8yb3cxTTYKRFlKRUtMNWZER2RDTGFZaWJWR2Y1NVhjMVFMcUs4RE9kRUFZUzRhTzhhejdWVjBSWTAxMVNVM04wSEtCM3RKcgp2WkJJc3NldVhBMjRqck12YjZxd2NrbXYxOFRRM1lsWFU3TzJKRHk3azB6STBBTTVuNVFGSDZTMDczWUxleVhHCjBidC9UVFZxaUtnVDFpR1h4eWR2SUhWUzcxWTRJeCt4YUxsNy9kZlJZVmhEbkNRYlIrc0VxYnprbWM3YjRyTVMKaVR6V040eHZDczVGd3diUmFMRzZEblpBUnc5am9BODB4QmV4cHNDRXJ5UVkrdGQzV3pSbUZxbGJkblh6UzlCSwpMTjB5UnNFaU1vSW4xcXNwZkc0RU9mVW9hMzBHQkdHUXJzbzBQOEFTRDU3ZXEvSktSRlNRSi8wSTZKbmYzTlZvCmhkdlAwd0lEQVFBQm8xWXdWREFPQmdOVkhROEJBZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JTRkVJRmRieGkzZmp4Qm84UE9GZVFJaEVZZApzREFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBT0J3RHIwV25WUXE0VUpiTytGeGI3Z0pERnZJRldDNVBhc2hVCk5rU3pTaHpkOGswVE00QUVEdFA5dFZIVHJMOE5ISkpnRGxsNkJTZnpSWDR5cHhUR3hINXJpYWlBTnVXUzJ5VVoKaFg5a1g2LzVna0h2RCtNbUc4V1BFa2EySVo1L0tzMXg5NzFIN2FzQW9Gcm1hZmlVa0pSUDJWVGUyRXZhckQyeQpEMk9NV1NxK0ZRNDJZS1QwS1NKdGZkYm1Wb2t5S2g1d1p2TzZ0bUlqRUI0WXNSS0N5RXI4ZUJKUjFvd1VCZ2hXCkVjaGtzL3paQ0tLY2E0YUxPMGFpSERidDZHb2cwUGV6R3JLVmE2QzNzdXZ0S2wwVzRDMVFNRHhnRGdFYVpTQ1kKQXZxUFZLeE1MYTNqUWlPQXdKMGRUNlhPdTUvN09CaWNmYWs3dStub1IvUnduUEdEckE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBejRJcWYwcm5ybzJvdzFNNkRZSkVLTDVmREdkQ0xhWWliVkdmNTVYYzFRTHFLOERPCmRFQVlTNGFPOGF6N1ZWMFJZMDExU1UzTjBIS0IzdEpydlpCSXNzZXVYQTI0anJNdmI2cXdja212MThUUTNZbFgKVTdPMkpEeTdrMHpJMEFNNW41UUZINlMwNzNZTGV5WEcwYnQvVFRWcWlLZ1QxaUdYeHlkdklIVlM3MVk0SXgreAphTGw3L2RmUllWaERuQ1FiUitzRXFiemttYzdiNHJNU2lUeldONHh2Q3M1Rnd3YlJhTEc2RG5aQVJ3OWpvQTgwCnhCZXhwc0NFcnlRWSt0ZDNXelJtRnFsYmRuWHpTOUJLTE4weVJzRWlNb0luMXFzcGZHNEVPZlVvYTMwR0JHR1EKcnNvMFA4QVNENTdlcS9KS1JGU1FKLzBJNkpuZjNOVm9oZHZQMHdJREFRQUJBb0lCQUcxSmpNQkYzd2RickVwVApCdndlWTI5aDlBVkFUT1psM1RQZURXMld6QnVUMFdrQnZyb1RGN2lQUWJHZS9TL1VPRmdvYjJFUURSbC9kVTY1ClcrMFdsSE0wSDJ4ei9ZT0tjNjFJSkczTXlVUEdjSXA4enZWU2JOZGc5Umw3RXpnYXVycUU1cjNuclRPQTVFTVQKZmtidmpQaEk3YmJUYnI4VUtpL0ZZUTJqUE82M2N3UEVxZHp0QW5jMFZpeUJWaGxTWXhmRzlrb0k1U2RqYlhhVgpsdUpKWVdxMFFhbTd2ZGg2Zk16WEhvMHBteWxIL1lkeXBIalVNQUVCYVp3M2UyeU1qRllkYm1HYk1EZk8xM2NICldpeGNXbll1WFB3a2pHZkQ1Zkg1eE5hTnR5aHVnVWZEOU1WdUJyWk5XUk4vdlJ5YjFQV1czKzBhWHhFanhaUXgKVllsUWtTRUNnWUVBMjhFQjJDOTFFMVZKSVNjdWROUzIvbGplMHNWTlBmdU90eXZpRzZoM2xjTDVENG1qRmMxOQpGckpmSWREWGpETXJPd3VwZ0VsdWFWVnZBdVoyWnQ5dHc4Wm1NU3h5Q2Q2SDQ0OEI1RXNzWHZmQXdVbW95YzkvCmJUWUpjWXpFcGVQczczNG5DRjJJVHN3bTRueDlOVS9HekorTldhRnlET3JSWENHekNRRW1QajhDZ1lFQThid1oKcDBDRHNhTitQZytRaHREYldxQThYQU04cUpxUlJ3WStNRmc5T3B3NmhEZlNDamgzRnJjK01DSzlkMU85NVhubgpMSk9pNWRlN0duL2xjWVZhK3Rvdk55V29iVTl1QmJuSjkvZE1yVkRHZ082SXF2dWd3cnFEWUdOTWVUcEw3ZVNQCjBvRmJjRm9WZnpJYzhKNVowZFJHNCticVRlK3pLZDVqSDgyRzhXMENnWUJtcElFTERDZWdEeDdvU0ZmUHBDZVIKSjh0MElVb1I0SFRwbzZxcUJvZE13VlA1Nk96dTJ4dEpSYWxmcng5dTBkdW9hYXNUUzdreHBBRUZGc1pKQ0tWSgpZMXNLTHR0Wk5zSzhER2p5ekJYK2liUlQwK2J0MUdpTmgwYmo3YjlRU09TN2ZHNFkzeTh5dHZLV3FWVUdXS3ZmCm1jcTVDY3F1cytOMEtCMXE0RW1QbXdLQmdDNkFUN01EenhHWjhNd0JkSHpxcW5lcGdWTDE4SEpDb1pXM0ZybDQKRC9jNVhHeFl6SmZZdXRmczBoS3liQjRMUnVsZzVONkhXL3U0M3k0KzBpVmZVTndXb3FTS0l2YzhJMThJbVZpUgpBdmdJSk5kaWkzblF3K0VSdmZvSndBbEY5SnREcjRNQURWWDBqbFFVa01xY3U0eUl1RVpaQWxPUnU3WmZLRlJTCjFoV1ZBb0dBUVp4eTArN09Kby9nai9zSDBwbkhyb05OVnQzNUp4UUVkRStlSG92eHEzV2FNSVRPc21CbjZlcloKRExraXYzOVRPQjlLWnV1Y3QwTkNUU2hkS0lSYnlXb1hkSHZaT3o2Q2R4ZEQxVnNJck1haW5mdW55MUdvOElwRwpCM09IU1dRb1M5VzA5MTdYbEZQTW9ReEpQMlpkUDBCaERDbGU4Q2kzbXNob09WQ1VWeTQ9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+```
+Пример kubeconfig на 4 кластера
+```yaml
+apiVersion: v1
+kind: Config
+
+clusters:
+- name: production
+  cluster:
+    certificate-authority: /etc/kubernetes/pki/ca.crt
+    server: https://controlplane:6443
+
+- name: development
+  cluster:
+    certificate-authority: /etc/kubernetes/pki/ca.crt
+    server: https://controlplane:6443
+
+- name: kubernetes-on-aws
+  cluster:
+    certificate-authority: /etc/kubernetes/pki/ca.crt
+    server: https://controlplane:6443
+
+- name: test-cluster-1
+  cluster:
+    certificate-authority: /etc/kubernetes/pki/ca.crt
+    server: https://controlplane:6443
+
+contexts:
+- name: test-user@development
+  context:
+    cluster: development
+    user: test-user
+
+- name: aws-user@kubernetes-on-aws
+  context:
+    cluster: kubernetes-on-aws
+    user: aws-user
+
+- name: test-user@production
+  context:
+    cluster: production
+    user: test-user
+
+- name: research
+  context:
+    cluster: test-cluster-1
+    user: dev-user
+
+users:
+- name: test-user
+  user:
+    client-certificate: /etc/kubernetes/pki/users/test-user/test-user.crt
+    client-key: /etc/kubernetes/pki/users/test-user/test-user.key
+- name: dev-user
+  user:
+    client-certificate: /etc/kubernetes/pki/users/dev-user/developer-user.crt
+    client-key: /etc/kubernetes/pki/users/dev-user/dev-user.key
+- name: aws-user
+  user:
+    client-certificate: /etc/kubernetes/pki/users/aws-user/aws-user.crt
+    client-key: /etc/kubernetes/pki/users/aws-user/aws-user.key
+
+current-context: test-user@development
+preferences: {}
 ```
