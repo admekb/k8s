@@ -28,6 +28,12 @@ rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["list", "create","delete"]
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
 ```
 ```console
 kubectl create rolebinding dev-user-binding --namespace=default --role=developer --user=dev-user
