@@ -1,3 +1,7 @@
+Изменить роль
+```console
+kubectl edit role developer -n blue
+```
 Проверить разрешен ли доступ пользователю
 ```console
 kubectl auth can-i create deployments
