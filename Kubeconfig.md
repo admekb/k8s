@@ -1,3 +1,7 @@
+Проксирование до кластера с сертификатами
+```console
+kubectl proxy
+```
 Посмотреть kubeconfig
 ```console
 kubectl config view
