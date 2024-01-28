@@ -1,5 +1,5 @@
 Смонтировать локально на хосте
-
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -22,3 +22,10 @@ spec:
       path: /var/log/webapp
       # this field is optional
       type: Directory
+```
+```yaml
+```
+```yaml
+```
+```yaml
+```
