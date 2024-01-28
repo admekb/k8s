@@ -1,4 +1,4 @@
-'''yaml
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -35,4 +35,8 @@ spec:
       protocol: UDP
     - port: 53
       protocol: TCP
-'''
+```
+Remember: The kube-dns service is exposed on port 53:
+```console
+root@controlplane:~> kubectl get svc -n kube-system 
+```
