@@ -23,7 +23,20 @@ spec:
       # this field is optional
       type: Directory
 ```
+Создание pv на хосте
 ```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-log
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /pv/log
 ```
 ```yaml
 ```
