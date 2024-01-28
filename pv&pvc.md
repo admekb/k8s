@@ -38,7 +38,18 @@ spec:
   hostPath:
     path: /pv/log
 ```
+Создание pvc
 ```yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: claim-log-1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
 ```
 ```yaml
 ```
