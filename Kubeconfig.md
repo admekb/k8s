@@ -10,6 +10,13 @@ kubectl config view
 ```console
 kubectl config get-clusters
 ```
+Посмотреть текущий context
+```console
+kubectl config get-contexts
+```
+```console
+kubectl config get-contexts
+```
 Переключить kubeconfig на использование cluster1
 ```console
 kubectl config use-context cluster1
